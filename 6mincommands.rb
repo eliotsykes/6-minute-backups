@@ -62,7 +62,7 @@ class DeleteOldFilesCommand < Command
   end
   
   def command_line
-    "#{FIND} #{path}/* -mtime +30 -delete"
+    "#{FIND} #{path}/* -mtime +30 -print | xargs rm"
   end
 end
 
