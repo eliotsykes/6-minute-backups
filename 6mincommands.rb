@@ -77,7 +77,8 @@ class EncryptCommand < Command
   
   def command_line
     # Command to encrypt with pgp - http://www.madboa.com/geek/gpg-quickstart/
-    "#{GPG} --encrypt --recipient '#{GPG_RECIPIENT}' --output #{encrypted} #{to_encrypt}"  
+    # --always-trust prevents prompt so the script can run unattended.
+    "#{GPG} --encrypt --always-trust --recipient '#{GPG_RECIPIENT}' --output #{encrypted} #{to_encrypt}"  
   end
 end
 
