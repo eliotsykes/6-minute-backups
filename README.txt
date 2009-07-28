@@ -38,6 +38,13 @@ Instructions
 
 3. Set up cron to run 6minbackup.rb daily (or however often you want it to run).
 
+Using the backups
+-----------------
+Large files require cat and piping output to gpg, so recommend using this command
+whether your encrypted backup file is large or small for decrypting and decompressing:
+
+cat my-backup-file-#{timestamp}.tar.bz2.gpg | gpg --decrypt | tar -jx
+
 Advanced
 --------
 Use s3sync.rb to store your ~/backups directory off-site.
