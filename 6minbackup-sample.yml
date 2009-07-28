@@ -1,0 +1,31 @@
+# The mysql databases to backup. Separate each name with single whitespace.
+databases: db_name1 db_name2 db_name3
+
+# Mysql user and password for backing up your database(s). Recommend you use
+# a read only user.
+mysql_user: read-only-user
+mysql_pwd: password
+
+# The directories you want backed up and what name you want the archive files
+# to have. The example below would create backup files with names like:
+# wordpress-#{timestamp}.tar.bz2, myapp-#{timestamp}.tar.bz2, otherapp-#{timestamp}.tar.bz2
+directories:
+  wordpress: /home/username/public_html/myblog
+  myapp: /home/username/dev/backmeuptemp
+  otherapp: /home/username/dev/backmeuptemp
+
+# Your username on the server
+os_user: os-username
+
+#The name of the recipient who's public key we're using to encrypt the file.
+gpg_recipient: Joe Bloggs
+
+# Location of commands used by the script, the defaults could be ok for most
+# cases.
+mysqldump: /usr/bin/mysqldump
+tar: /bin/tar
+mkdir: /bin/mkdir
+gpg: /usr/bin/gpg
+rm: /bin/rm
+find: /usr/bin/find
+
