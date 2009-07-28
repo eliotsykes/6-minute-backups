@@ -94,7 +94,7 @@ class MysqlDumpCommand < Command
     # --single-transaction is good for backing up InnoDB
     # Dump to a sql file first, don't compress at the same time to reduce the time
     # we're using mysqldump which is probably a good thing.
-    "#{MYSQLDUMP} --single-transaction --databases #{DATABASES} --user=#{MYSQL_USER} --password=#{MYSQL_PWD} > #{output}"
+    "#{MYSQLDUMP} --single-transaction --databases #{DATABASES} --user=#{MYSQL_USER} --password='#{MYSQL_PWD}' > #{output}"
   end
   
   def log_message
