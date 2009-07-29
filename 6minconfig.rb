@@ -1,7 +1,6 @@
 require 'yaml'
 
-# Could add more config search paths here.
-confpath = ["."]
+confpath = [File.expand_path(File.dirname(__FILE__)), "#{ENV['HOME']}/.6minbackup"]
 
 confpath.each do |path|
   if File.exists?(path) && File.directory?(path) && File.exists?("#{path}/6minbackup.yml")
