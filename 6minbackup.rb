@@ -1,4 +1,9 @@
-#!/usr/bin/env ruby 
+#!/usr/bin/env ruby
+
+# Modify load path so require will find files in this directory regardless
+# of where this script is run from.
+$LOAD_PATH << File.expand_path(File.dirname(__FILE__))
+
 require '6minconfig'
 require '6mincommands'
 
