@@ -28,15 +28,22 @@ Instructions
 -----------
 1. Put all the files in this directory on the system you want to backup.
    Putting it in your home directory under /6-minute-backups is good.
+   
+   cd ~
+   git clone git://github.com/eliotsykes/6-minute-backups.git
 
-2. Copy 6minbackup-sample.yml to 6minbackup.yml and edit as directed in that
-   file.
+2. Copy 6minbackup-sample.yml to ~/.6minbackup/6minbackup.yml and edit as directed in that
+   file:
+   
+   mkdir .6minbackup
+   cp 6-minute-backups/6minbackup-sample.yml .6minbackup/6minbackup.yml
+   vi .6minbackup/6minbackup.yml
 
 3. Import the gpg_recipient's public key before running the script: 
    e.g. gpg --import pubkey.txt
    ( More on gpg here: http://www.madboa.com/geek/gpg-quickstart/ )
 
-3. Set up cron to run 6minbackup.rb daily (or however often you want it to run).
+3. Set up cron to run 6minbackup.rb daily.
 
 Using the backups
 -----------------
@@ -47,7 +54,8 @@ cat my-backup-file-#{timestamp}.tar.bz2.gpg | gpg --decrypt | tar -jx
 
 Advanced
 --------
-Use s3sync.rb to store your ~/backups directory off-site.
+Use s3sync.rb to store your ~/backups directory off-site on Amazon S3. More info
+here: http://s3sync.net/wiki
 
 
 Feedback and contributions welcome,
