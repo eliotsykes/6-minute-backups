@@ -5,8 +5,8 @@ class Command
   def execute
     if (enabled?)
       puts log_message
-      command_lines.each do |command_line|
-        system(command_line)
+      command_lines.each do |cmd_line|
+        system(cmd_line)
       end
     end
   end
@@ -16,7 +16,7 @@ class Command
   end
   
   def log_message
-    "#{message} '#{command_line}'"
+    "#{message} #{command_lines}"
   end
   
   def enabled?
