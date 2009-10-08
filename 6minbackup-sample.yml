@@ -28,4 +28,4 @@ mkdir: /bin/mkdir
 gpg: /usr/bin/gpg
 rm: /bin/rm
 find: /usr/bin/find
-
+cp: /bin/cp

@@ -7,14 +7,18 @@ The name was inspired by the hitchhiker/abs video scene in There's Something Abo
 6 minutes is how long I'd like for this to take you to setup on a new box.
 
 I wrote this to do encrypted backups of a wordpress blog, a rails app and a few
-mysql databases. You just edit a yml file to backup any databases and directories.
+mysql databases. You just edit a simple yml file to backup any databases and directories.
 
 What does it do?
 ----------------
 - Backs up any number of mysql databases
 - Backs up any number of directories
 - Encrypts all backups to your home directory (under ~/backups/)
-- Keeps last 30 days worth of backups
+- Backs up daily, weekly (every Monday) and monthly (every 1st of the month)
+- Selectively deletes oldest backup files to keep backup directory size down, specifically:
+  - Daily backups: keeps all daily backups from the last week, older dailies are deleted
+  - Weekly backups: keeps all weekly backups from the last month, older weeklies are deleted
+  - Monthly backups: keeps all monthly backups from the last year, older monthlies are deleted
 
 What will I need?
 -----------------
@@ -23,6 +27,8 @@ What will I need?
 - A public key to encrypt the backups using GPG. Follow the simple instructions
   here if you want to generate your own public key:
   http://www.madboa.com/geek/gpg-quickstart/#keyintro
+  
+- Cron to trigger script to run once a day
 
 Instructions
 -----------

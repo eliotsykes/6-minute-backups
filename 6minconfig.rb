@@ -19,4 +19,6 @@ GPG=CONFIG["gpg"]
 GPG_RECIPIENT=CONFIG["gpg_recipient"]
 RM=CONFIG["rm"]
 FIND=CONFIG["find"]
-
+CP=CONFIG["cp"]
+WEEKLIES_DIR = 'weeklies'
+MONTHLIES_DIR = 'monthlies'
