@@ -35,7 +35,16 @@ class CompressCommand < Command
   end
   
   def command_line
-    "#{TAR} -cjf #{compressed} #{to_compress}"
+    # The -C option changes directory so we don't get full paths in our backups.
+    "#{TAR} -cjf #{compressed} -C #{source_parent} #{source}"
+  end
+  
+  def source_parent
+    File.dirname(to_compress)
+  end
+  
+  def source
+    File.basename(to_compress)
   end
 end
 
