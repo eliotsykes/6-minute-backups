@@ -173,7 +173,7 @@ class WeeklyGraduateCommand < GraduateCommand
   
   def monday?
     # Returns the day of the week as a number, where 0 = Sunday, 1 = Mon, etc.
-    now.strftime("%w") == 1
+    now.strftime("%w") == '1'
   end
 end
 
